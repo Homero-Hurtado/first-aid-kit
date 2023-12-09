@@ -1,32 +1,28 @@
-/* Variable de control */
-let controlView = false;
-
-const elementList = document.getElementById("list");
-const elementBtn = document.getElementById("myButton");
-
-/* Desplazamiento del header */
+/* Scroller header */
 
 window.addEventListener("scroll", function () {
     var header = document.querySelector("header");
     header.classList.toggle("abajo", window.scrollY > 0);
 })
 
-/* Cuando el documento este completamenta cargado ejecutar la funcion */
 
-document.addEventListener("DOMContentLoaded", function () {
+/* Row or column view change */
 
-    /* Renderizar vertical u horizontalmente basandonos en la variable de control */
+let controlView = false; //Variable de control
 
-    if (!controlView) {
+const elementList = document.getElementById("list");
+const elementBtn = document.getElementById("myButton");
+
+document.addEventListener("DOMContentLoaded", function () { // When the document is completely loaded, execute the function
+
+    if (!controlView) {  //Render vertically or horizontally based on control variable
         elementList.setAttribute("class", "vertical");
     } else {
         elementList.setAttribute("class", "horizontal");
     }
 });
 
-elementBtn.addEventListener("click", function () {
-
-    /* Si es true la pasa a false y si es false lo pasa a true */
+elementBtn.addEventListener("click", function () { //If it is true it changes it to false and if it is false it changes it to true
 
     controlView = !controlView;
 
@@ -38,34 +34,29 @@ elementBtn.addEventListener("click", function () {
 });
 
 switch (controlView) {
-    case controlView: // si controlView == true
+    case controlView: // if controlView == true
         elementList.setAttribute("class", "horizontal");
         break;
-    case !controlView: // si controlView == true
+    case !controlView: // if controlView == true
         elementList.setAttribute("class", "vertical");
         break;
-    default:   // si controlview es otro valor que no esta en los case
+    default:   // if controlview It is another value that is not in the cases
         elementList.setAttribute("class", "vertical");
         break;
 
 }
 
+/*  Show or hide search bar and shadow main content */
 
-//Ejecutar funciones
-
-document.getElementById("icon-search").addEventListener("click", show_input);
+document.getElementById("icon-search").addEventListener("click", show_input); //Run functions
 document.getElementById("cover-ctn-search").addEventListener("click", hide_input);
 
-//Declaracion de variables
-
-bars_search = document.getElementById("box-search");
+bars_search = document.getElementById("box-search"); //Declaration of variables
 cover_search = document.getElementById("cover-ctn-search");
 inputSearch = document.getElementById("inputSearch");
 optionsSearch = document.getElementById("options-search");
 
-// Funcion para mostrar el buscador
-
-function show_input() {
+function show_input() { // Function to show the search bar
     bars_search.style.visibility = "visible";
     cover_search.style.display = "block"
     bars_search.style.left = "1px"
@@ -76,17 +67,14 @@ function show_input() {
     }
 }
 
-//Funcion para ocultar el buscador
-
-function hide_input() {
+function hide_input() { // Function to hide search bar
     bars_search.style.visibility = "hidden";
     cover_search.style.display = "none";
     inputSearch.value = "";
     optionsSearch.style.display = "none";
 }
 
-
-/* Busqueda */
+/* Content search*/
 
 document.addEventListener('DOMContentLoaded', function () {
     const inputSearch = document.getElementById('inputSearch');
@@ -101,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (isEqual) {
                 element.style.display = 'block';
+                cover_search.style.display = "none";
             } else {
                 element.style.display = 'none';
             }
