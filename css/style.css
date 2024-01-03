@@ -173,9 +173,9 @@ header.abajo {
 }
 
 .content {
-    padding: 15px 2.5vw;
+    padding: 20px 2.5vw;
     width: 100%;
-    height: 100%;
+    height:100%;
     z-index: 5;
 }
 
