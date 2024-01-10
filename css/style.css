@@ -8,7 +8,7 @@
 body {
     margin: 0px;
     width: 100vW;
-    height: 100vh;
+    height: 200vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -175,7 +175,7 @@ header.abajo {
 .content {
     padding: 20px 2.5vw;
     width: 100%;
-    height:100%;
+    height:300vh;
     z-index: 5;
 }
 
@@ -286,7 +286,7 @@ a {
 }
 
 #footer{
-    position:fixed;
+    position:relative;
     bottom: 0;
     width: 100%;
     height:5.5rem;
@@ -303,7 +303,7 @@ a {
     justify-content: space-between;
     padding: 10px 30px;
     border-bottom: 1px solid #dadce0;
-    font-size: 15px;
+    font-size: 14px;
     color: #70757a;
 }
 
