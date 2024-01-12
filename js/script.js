@@ -12,13 +12,16 @@ let controlView = false; //Variable de control
 
 const elementList = document.getElementById("list");
 const elementBtn = document.getElementById("myButton");
+foot_menu = document.getElementById("footer");
 
 document.addEventListener("DOMContentLoaded", function () { // When the document is completely loaded, execute the function
 
     if (!controlView) {  //Render vertically or horizontally based on control variable
         elementList.setAttribute("class", "vertical");
+        foot_menu.style.position = "relative";
     } else {
         elementList.setAttribute("class", "horizontal");
+        foot_menu.style.position = "fixed";
     }
 });
 
@@ -28,8 +31,10 @@ elementBtn.addEventListener("click", function () { //If it is true it changes it
 
     if (!controlView) {
         elementList.setAttribute("class", "vertical");
+        foot_menu.style.position = "relative";
     } else {
         elementList.setAttribute("class", "horizontal");
+        foot_menu.style.position = "fixed";
     }
 });
 
